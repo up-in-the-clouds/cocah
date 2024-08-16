@@ -147,27 +147,27 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 
 
-<div class="wp-block-media-text is-stacked-on-mobile" style="grid-template-columns:55% auto">
-<figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="811" height="618" src="https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/img.png" alt="" class="wp-image-41 size-full" srcset="https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/img.png 811w, https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/img-300x229.png 300w, https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/img-768x585.png 768w" sizes="(max-width: 811px) 100vw, 811px"></figure><div class="wp-block-media-text__content">
+<div class="wp-block-media-text is-stacked-on-mobile is-image-fill" style="grid-template-columns:55% auto">
+<figure class="wp-block-media-text__media" style="background-image:url(https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-1024x780.png);background-position:50% 50%"><img fetchpriority="high" decoding="async" width="1024" height="780" src="https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-1024x780.png" alt="" class="wp-image-153 size-full" srcset="https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-1024x780.png 1024w, https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-300x229.png 300w, https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-768x585.png 768w, https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-1536x1170.png 1536w, https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/bg3-lg-2048x1561.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><div class="wp-block-media-text__content">
 <ul class="wp-block-list">
-<li>Are you interested in helping to develop ethical Caribbean archaeology in practical ways?&nbsp;</li>
+<li style="font-size:1.3rem">Are you interested in helping to develop ethical Caribbean archaeology in practical ways?&nbsp;</li>
 
 
 
-<li>Can you give time and energy to pursue concrete goals?&nbsp;</li>
+<li style="font-size:1.3rem">Can you give time and energy to pursue concrete goals?&nbsp;</li>
 
 
 
-<li>Can you make space for and support colleagues whose voices need amplifying?&nbsp;</li>
+<li style="font-size:1.3rem">Can you make space for and support colleagues whose voices need amplifying?&nbsp;</li>
 
 
 
-<li>Can you be an active bystander?&nbsp;</li>
+<li style="font-size:1.3rem">Can you be an active bystander?&nbsp;</li>
 </ul>
 
 
 
-<p>Contact CoCAH to become a member, using the form below.</p>
+<p style="font-size:1.3rem">Contact CoCAH to become a member, using the form below.</p>
 </div>
 </div>
 
@@ -177,22 +177,20 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 
 
-<!--<div style="margin:auto; display:block; max-width:640px;" ><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlfKil03LUXlwi_MdlhybfvbqRRqbjSRZlQTcR8tQQz3RJ4A/viewform?embedded=true" width="640" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>-->
-
-
-
 <!-- CSS for styling -->
-<style>form {
+<style>.contactBlock {
+        max-width: 640px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    form {
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      
+        max-width: 640px;
+        width: 100%;
     }
 
-.contactBlock{
-  max-width: 640px;
-        width: 100%;
-}
     .field {
         display: flex;
         flex-direction: column;
@@ -235,9 +233,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
     }
 
     #confirmationMessage {
+font-family:sans-serif;
         text-align: center;
         margin-top: 20px;
-        color: #A0D9CE;
+margin-bottom: 20px;
+        color: #A85645;
         font-weight: bold;
     }</style>
 
@@ -279,38 +279,41 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <div id="confirmationMessage" style="display:none;">
     Sent! Thank you, we will contact you as soon as possible.
 </div>
-
-<!-- JavaScript to handle form submission -->
-<script>document.getElementById("contactForm").addEventListener("submit", function(event){
+<!-- JavaScript for form submission and confirmation message -->
+<script>document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
 
-        var formData = new FormData(this); // Gather the form data
+        // Gather form data and serialize it
+        const formData = new URLSearchParams(new FormData(this)).toString();
 
+        // Send form data using fetch
         fetch(this.action, {
-            method: 'POST',
-            body: formData,
+            method: this.method,
             headers: {
-                'Accept': 'application/json'
-            }
-        }).then(function(response) {
-            if (response.ok) {
-                document.getElementById("contactForm").reset(); // Reset the form
-                document.getElementById("confirmationMessage").style.display = "block"; // Show the confirmation message
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Hide the form and show the confirmation message
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
             } else {
-                alert("There was a problem with your submission. Please try again.");
+                // Handle errors here if needed
+                alert('There was an issue submitting the form: ' + data.message);
             }
-        }).catch(function(error) {
-            alert("There was an error submitting the form. Please try again.");
+        })
+        .catch(error => {
+            // Handle network errors
+            alert('There was a network error. Please try again.');
         });
     });</script>
 
 
 
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-
-
-
-<p></p>
 </div>
 
 <footer class="wp-block-template-part">
