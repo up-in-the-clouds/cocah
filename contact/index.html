@@ -177,116 +177,129 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 
 
-<p><!-- CSS for styling --></p>
-<p><style>
-<p>.contactBlock {<br />
-        max-width: 640px;<br />
-        width: 100%;<br />
-        margin: 0 auto;<br />
-    }<br />
-    form {<br />
-        padding: 20px;<br />
-        border-radius: 8px;<br />
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);<br />
-        max-width: 640px;<br />
-        width: 100%;<br />
-    }</style></p>
-<p>    .field {<br>
-        display: flex;<br>
-        flex-direction: column;<br>
-        margin-bottom: 15px;<br>
-    }</p>
-<p>    .field label {<br>
-        margin-bottom: 5px;<br>
-        font-weight: bold;<br>
-    }</p>
-<p>    .field input,<br>
-    .field textarea {<br>
-        padding: 10px;<br>
-        font-size: 16px;<br>
-        border: 1px solid #ccc;<br>
-        border-radius: 4px;<br>
-        width: 100%;<br>
-        box-sizing: border-box;<br>
-    }</p>
-<p>    .field textarea {<br>
-        resize: vertical;<br>
-        min-height: 100px;<br>
-    }</p>
-<p>    input[type="submit"] {<br>
-        background-color: #A85645;<br>
-        color: #FBFFF0;<br>
-        padding: 10px 15px;<br>
-        border: none;<br>
-        border-radius: 4px;<br>
-        cursor: pointer;<br>
-        font-size: 16px;<br>
-        width: 100%;<br>
-    }</p>
-<p>    input[type="submit"]:hover {<br>
-        background-color: #A0D9CE;<br>
-    }</p>
-<p>    #confirmationMessage {<br>
-font-family:sans-serif;<br>
-        text-align: center;<br>
-        margin-top: 20px;<br>
-margin-bottom: 20px;<br>
-        color: #A85645;<br>
-        font-weight: bold;<br>
-    }<br>
-</p>
-<p><!-- Make sure you don't change the form action--></p>
-<div class="contactBlock"><form id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
-<!-- Replace with accessKey sent to your email --><br><input name="accessKey" type="hidden" value="495edd43-7b0b-4829-b284-fd3bf9162afb"> <!-- Required -->
-<div class="field">
-<label class="label">Your Name</label><br><input name="name" required="" type="text" placeholder="Enter Your Name">
+<!-- CSS for styling -->
+<style>.contactBlock {
+        max-width: 640px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    form {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 640px;
+        width: 100%;
+    }
+    .field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .field label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .field input,
+    .field textarea {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .field textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    input[type="submit"] {
+        background-color: #A85645;
+        color: #FBFFF0;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+    }
+    input[type="submit"]:hover {
+        background-color: #A0D9CE;
+    }
+    #confirmationMessage {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #A85645;
+        font-weight: bold;
+    }</style>
+
+<!-- Make sure you don't change the form action-->
+<div class="contactBlock">
+    <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
+        <!-- Replace with accessKey sent to your email -->
+        <input name="accessKey" type="hidden" value="495edd43-7b0b-4829-b284-fd3bf9162afb"> <!-- Required -->
+        <div class="field">
+            <label class="label">Your Name</label>
+            <input name="name" required="" type="text" placeholder="Enter Your Name">
+        </div>
+        <div class="field">
+            <label class="label">Your Email</label>
+            <input name="email" required="" type="email" placeholder="Enter Your Email">
+        </div>
+        <div class="field">
+            <label class="label">Position / University</label>
+            <input name="Position / University" type="text"> <!-- Optional -->
+        </div>
+        <div class="field">
+            <label class="label">Topic</label>
+            <input name="Research field" type="text"> <!-- Optional -->
+        </div>
+        <div class="field">
+            <label class="label">Message</label>
+            <textarea name="message" placeholder="Enter Your Message"></textarea> <!-- Optional -->
+        </div>
+        <input type="submit" value="Submit">
+    </form>
 </div>
-<div class="field">
-<label class="label">Your Email</label><br><input name="email" required="" type="email" placeholder="Enter Your Email">
+
+<!-- Confirmation Message -->
+<div id="confirmationMessage" style="display: none;">
+    Sent! Thank you, we will contact you as soon as possible.
 </div>
-<div class="field">
-<label class="label">Position / University</label><br><input name="Position / University" type="text"> <!-- Optional -->
-</div>
-<div class="field">
-<label class="label">Topic</label><br><input name="Research field" type="text"> <!-- Optional -->
-</div>
-<div class="field">
-<label class="label">Message</label><br><textarea name="message" placeholder="Enter Your Message"></textarea> <!-- Optional -->
-</div>
-<p><input type="submit" value="Submit"></p>
-</form></div>
-<p><!-- Confirmation Message --></p>
-<div id="confirmationMessage" style="display: none;">Sent! Thank you, we will contact you as soon as possible.</div>
-<p><!-- JavaScript for form submission and confirmation message --><br><script><br />
-    document.getElementById('contactForm').addEventListener('submit', function (event) {<br />
-        event.preventDefault(); // Prevent the default form submission<\/p>
-<p>        // Gather form data and serialize it<br />
-        const formData = new URLSearchParams(new FormData(this)).toString();<\/p>
-<p>        // Send form data using fetch<br />
-        fetch(this.action, {<br />
-            method: this.method,<br />
-            headers: {<br />
-                'Content-Type': 'application/x-www-form-urlencoded',<br />
-            },<br />
-            body: formData,<br />
-        })<br />
-        .then(response => response.json())<br />
-        .then(data => {<br />
-            if (data.success) {<br />
-                // Hide the form and show the confirmation message<br />
-                document.getElementById('contactForm').style.display = 'none';<br />
-                document.getElementById('confirmationMessage').style.display = 'block';<br />
-            } else {<br />
-                // Handle errors here if needed<br />
-                alert('There was an issue submitting the form: ' + data.message);<br />
-            }<br />
-        })<br />
-        .catch(error => {<br />
-            // Handle network errors<br />
-            alert('There was a network error. Please try again.');<br />
-        });<br />
-    });<br />
-</script></p>
+
+<!-- JavaScript for form submission and confirmation message -->
+<script>document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Gather form data and serialize it
+        const formData = new URLSearchParams(new FormData(this)).toString();
+
+        // Send form data using fetch
+        fetch(this.action, {
+            method: this.method,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Hide the form and show the confirmation message
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
+            } else {
+                // Handle errors here if needed
+                alert('There was an issue submitting the form: ' + data.message);
+            }
+        })
+        .catch(error => {
+            // Handle network errors
+            alert('There was a network error. Please try again.');
+        });
+    });</script>
+
 
 
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
