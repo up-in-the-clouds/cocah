@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments for Coalition for Caribbean Archaeological Heritage	</title>
-	<atom:link href="https://up-in-the-clouds.github.io/cocah/comments/feed/" rel="self" type="application/rss+xml" />
-	<link>https://up-in-the-clouds.github.io/cocah</link>
+	<atom:link href="https://cocah.net/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>https://cocah.net</link>
 	<description>Community</description>
 	<lastBuildDate>Wed, 28 Aug 2024 16:28:24 +0000</lastBuildDate>
 	<sy:updatePeriod>

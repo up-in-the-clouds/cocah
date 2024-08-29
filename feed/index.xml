@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Coalition for Caribbean Archaeological Heritage</title>
-	<atom:link href="https://up-in-the-clouds.github.io/cocah/feed/" rel="self" type="application/rss+xml" />
-	<link>https://up-in-the-clouds.github.io/cocah</link>
+	<atom:link href="https://cocah.net/feed/" rel="self" type="application/rss+xml" />
+	<link>https://cocah.net</link>
 	<description>Community</description>
 	<lastBuildDate>Wed, 28 Aug 2024 16:28:24 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,9 +21,9 @@
 	<generator>https://wordpress.org/?v=6.6.1</generator>
 
 <image>
-	<url>https://up-in-the-clouds.github.io/cocah/wp-content/uploads/2024/08/icon-150x150.png</url>
+	<url>https://cocah.net/wp-content/uploads/2024/08/icon-150x150.png</url>
 	<title>Coalition for Caribbean Archaeological Heritage</title>
-	<link>https://up-in-the-clouds.github.io/cocah</link>
+	<link>https://cocah.net</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
